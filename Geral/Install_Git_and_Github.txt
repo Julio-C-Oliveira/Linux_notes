@@ -99,3 +99,10 @@ git commit -m "Descrição do commit"
 git push origin main
 enviar para o repositório remoto
 
+# Em caso de alteração do nome do repositório remoto o URL precisará ser atualizado:
+verifique o url utilizado atualmente com o:
+git remote -v
+caso seja diferente da url do repositório remoto utilize o comando:
+git remote set-url origin git remote set-url origin url.git
+para verificar se realmente foi alterado
+git remote -v
