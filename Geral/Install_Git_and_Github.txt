@@ -90,3 +90,12 @@ git branch -vv
 # Logs do repositório remoto
 git log origin/main --not main
 mostra o que está na main remoto e não na main local
+
+# Commits posteriores
+git status
+git add .
+git status
+git commit -m "Descrição do commit"
+git push origin main
+enviar para o repositório remoto
+
