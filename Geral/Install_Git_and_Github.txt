@@ -1,0 +1,92 @@
+# Baixar o git
+sudo apt install git
+
+# Definir um nome de usuário para o Git em todos os repositórios
+git config --global user.name "username"
+
+# Para ver qual é o nome do usuário
+git config --global user.name
+
+# Definir o nome para somente um repositório
+- Navegue até o diretório do repositório
+git config user.name "username"
+
+# Definir o e-mail de todos os commits
+git config --global user.email "e-mail"
+
+# Verificar o nome
+git config --global user.email
+
+# Definir o e-mail dos commits de um repositório especifico
+git config user.email "e-mail"
+
+Obs: verifique no seu github os e-mais permitidos.
+
+# Instalar o Github de terminal
+sudo apt install gh
+
+# Verificar as versões
+gh --version
+git --version
+
+# Logar na conta do Github
+gh auth login
+- Selecione a opção Github.com
+- Protocolo Https
+- Login with browser
+
+# Criando um repositório
+- Vá para o local onde deseja criar um repositório
+mkdir nome_do_repositorio
+cd nome_do_repositorio
+
+# Inicializar o reposiório
+git init -b main
+
+# Criar o README
+echo "Descrição do Repositório" > README.md
+
+# Criar o gitignore, depende da linguagem utilizada
+- Python: curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -o .gitignore
+- Java: curl https://raw.githubusercontent.com/github/gitignore/main/Java.gitignore -o .gitignore
+- Kotlin: curl https://raw.githubusercontent.com/github/gitignore/main/Android.gitignore -o .gitignore
+- Kotlin: curl https://raw.githubusercontent.com/github/gitignore/main/Gradle.gitignore -o .gitignore
+- C++: curl https://raw.githubusercontent.com/github/gitignore/main/C%2B%2B.gitignore -o .gitignore
+- C: curl https://raw.githubusercontent.com/github/gitignore/main/C.gitignore -o .gitignore
+
+# Adicionar os arquivos ao repositório
+Para verificar e atualizar os arquivos de todo o repositório:
+git add .
+Para escolher uma pasta especifica:
+git add pasta
+
+# Fazer o commit
+git commit -m "Primeiro commit"
+
+# Criar o repositório remoto no Github
+gh repo create nome_do_repositorio --public --source=. --push
+
+--public: define o repositório como público
+--source: define o diretório local que será utilizado como origem para o repositório remoto
+--push: realiza o push inicial para o repositório remoto
+
+# Verifique se foi configurado corretamente
+git remote -v
+
+# Verificar diferenças e estado do repositório
+git status
+serve para verificar se arquivos foram modificados, adicionados ou removidos
+
+git fetch
+baixa as informações do repositório remoto sem aplicar as alterações ao local
+
+git status
+se aparecer ahead significa que você tem commits locais que ainda não foram enviados
+se aparecer behind significa que existem commits no remoto que você ainda não puxou
+
+# Verificar em qual branch estou
+git branch -vv
+
+# Logs do repositório remoto
+git log origin/main --not main
+mostra o que está na main remoto e não na main local
