@@ -1,0 +1,26 @@
+# Verificar o estado do swap na sua máquina
+swapon --show
+se não ouver saída significa que o sistema não tem swap ativo
+
+# Opções
+## Criar uma partição de swap
+
+## Criar um arquivo de swap
+sudo fallocate -l 8G /swapfile
+
+Definir o acesso do arquivo somente pelo root
+sudo chmod 600 /swapfile
+
+formatar o arquivo como swap
+sudo mkswap /swapfile
+
+ativar o swap
+sudo swapon /swapfile
+
+verificar 
+swapon --show
+
+torne o swap permanente edite o arquivo sudo nano /etc/fstab
+adicione na ultima linha do arquivo
+/swapfile none swap sw 0 0
+
